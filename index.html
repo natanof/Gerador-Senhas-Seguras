@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Seguras</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <h2>Dicas de Segurança</h2>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Use senhas com pelo menos 12 caracteres.</li>
+            <li><i class="fas fa-check-circle"></i> Combine letras maiúsculas, minúsculas, números e símbolos.</li>
+            <li><i class="fas fa-check-circle"></i> Evite senhas baseadas em informações pessoais.</li>
+            <li><i class="fas fa-check-circle"></i> Não reutilize senhas em diferentes contas.</li>
+        </ul>
+    </div>
+
+    <!-- Menu Flutuante -->
+    <nav class="floating-menu">
+        <ul>
+            <li><a href="#" title="Início"><img src="imagens/icons8-casa-48 (1).png" alt="Home"></a></li>
+            <li><a href="#" title="Configurações"><img src="imagens/icons8-configurações-48.png" alt="Configurações"></a></li>
+            <li><a href="#" title="Ajuda"><img src="imagens/icons8-ajuda-48.png" alt="Ajuda"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <h1>Gerador de Senhas Seguras</h1>
+        <label for="length">Tamanho da Senha:</label>
+        <input type="number" id="length" min="8" max="64" value="16">
+
+        <!-- Opções de Personalização -->
+        <div class="options">
+            <label><input type="checkbox" id="uppercase" checked> Letras Maiúsculas</label>
+            <label><input type="checkbox" id="lowercase" checked> Letras Minúsculas</label>
+            <label><input type="checkbox" id="numbers" checked> Números</label>
+            <label><input type="checkbox" id="symbols" checked> Símbolos</label>
+            <label><input type="checkbox" id="pronounceable"> Senha Pronunciável</label>
+        </div>
+
+        <!-- Força da Senha -->
+        <div class="password-strength">
+            <span>Força da Senha:</span>
+            <div class="strength-bar">
+                <div id="strength-indicator"></div>
+            </div>
+        </div>
+
+        <button onclick="generatePassword()" id="generate-btn" aria-label="Gerar Senha">Gerar Senha</button>
+        <input type="text" id="password" readonly>
+        <button onclick="copyPassword()" id="copy-btn" aria-label="Copiar Senha">
+            Copiar <i class="fas fa-copy"></i>
+        </button>
+
+        <!-- Histórico de Senhas -->
+        <div class="history">
+            <h3>Histórico de Senhas</h3>
+            <ul id="password-history"></ul>
+        </div>
+
+        <!-- Botão Exportar -->
+        <button onclick="exportPasswords()" aria-label="Exportar Senhas">Exportar Senhas</button>
+
+        <!-- Modo Escuro/Claro -->
+        <button onclick="toggleDarkMode()" id="dark-mode-toggle" aria-label="Alternar Modo Escuro/Claro">Modo Escuro</button>
+
+        <!-- Notificação Temporária -->
+        <div id="notification" class="hidden">
+            <i class="fas fa-check-circle"></i> Senha copiada com sucesso!
+        </div>
+
+        <!-- Mensagem de Erro -->
+        <div id="error-message" class="hidden"></div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

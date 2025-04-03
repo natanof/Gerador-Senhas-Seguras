@@ -1,0 +1,299 @@
+/* Estilos Globais */
+body {
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    position: relative;
+    border: 5px solid #007BFF; /* Borda azul ao redor do site */
+    box-sizing: border-box;
+}
+
+/* Barra Lateral */
+.sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 250px;
+    background: #e3f2fd; /* Azul claro para harmonizar */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: left;
+}
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #007BFF;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+.sidebar ul li i {
+    margin-right: 10px;
+    color: #007BFF;
+}
+
+/* Container Principal */
+.container {
+    background: white;
+    padding: 30px; /* Aumentado o padding para mais espaço */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px; /* Expandido o tamanho máximo */
+    width: 100%;
+}
+.container h1 {
+    font-size: 28px; /* Título maior */
+    margin-bottom: 25px; /* Mais espaço abaixo do título */
+    color: #007BFF;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Mais espaço entre as opções */
+    margin: 20px 0;
+}
+.options label {
+    font-size: 16px; /* Texto das opções maior */
+    color: #333;
+}
+.options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Botões */
+button {
+    margin-top: 15px; /* Mais espaço acima dos botões */
+    padding: 12px 25px; /* Botões maiores */
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px; /* Texto dos botões maior */
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Menu Flutuante */
+.floating-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 123, 255, 0.8);
+    padding: 15px; /* Menu flutuante maior */
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+.floating-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Mais espaço entre os ícones */
+}
+.floating-menu ul li a img {
+    width: 35px; /* Ícones maiores */
+    height: 35px;
+    transition: 0.3s;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+}
+.floating-menu ul li a:hover img {
+    transform: scale(1.1);
+}
+
+/* Botões */
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Animação do Botão Gerar Senha */
+#generate-btn {
+    position: relative;
+    overflow: hidden;
+}
+#generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.5s ease;
+}
+#generate-btn:active::before {
+    left: 100%;
+}
+
+/* Notificação Temporária */
+#notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#notification i {
+    color: white;
+}
+#notification.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Força da Senha */
+.password-strength {
+    margin: 20px 0;
+    text-align: left;
+}
+.strength-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+#strength-indicator {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Opções de Personalização */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+.options label {
+    font-size: 16px;
+    color: #333;
+}
+.options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Força da Senha */
+.password-strength {
+    margin: 20px 0;
+    text-align: left;
+}
+.strength-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+#strength-indicator {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+#strength-indicator.weak {
+    background: red;
+}
+#strength-indicator.medium {
+    background: orange;
+}
+#strength-indicator.strong {
+    background: green;
+}
+
+/* Histórico de Senhas */
+.history {
+    margin-top: 20px;
+    text-align: left;
+}
+#password-history {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+#password-history li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Botão Exportar */
+button {
+    margin-top: 15px;
+}
+
+/* Mensagem de Erro */
+#error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#error-message.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+body.dark-mode .container {
+    background: #1e1e1e;
+    color: white;
+}
+body.dark-mode .sidebar {
+    background: #1e1e1e;
+}
+body.dark-mode .floating-menu {
+    background: rgba(0, 0, 0, 0.8);
+}
+body.dark-mode #dark-mode-toggle {
+    background: #ff5722;
+}
