@@ -34,29 +34,29 @@ body {
 }
 
 #conteudo {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 20px 0;
+    display: flex; /* Organiza as divs horizontalmente */
+    width: 100%; /* O container ocupa toda a largura */
+    /* Removendo o margin vertical */
 }
 
 #esquerda {
     border: 3px solid pink;
-    width: 200px;
+    width: 200px; /* Largura fixa */
     height: 300px;
     background-color: lightpink;
 }
 
 #centro {
     border: 3px solid blue;
-    width: 600px;
+    flex-grow: 1; /* Expande para preencher o espaço restante */
+    min-width: 600px; /* Largura mínima para garantir visibilidade */
     height: 300px;
     background-color: lightblue;
 }
 
 #direita {
     border: 3px solid red;
-    width: 200px;
+    width: 200px; /* Largura fixa */
     height: 300px;
     background-color: lightcoral;
 }
