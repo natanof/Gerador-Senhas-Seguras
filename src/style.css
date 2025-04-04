@@ -280,20 +280,139 @@ button {
 }
 
 /* Modo Escuro */
+/* Transição global para suavizar as mudanças */
+body, .container, .sidebar, .floating-menu, button, h1, h2, h3, label, li, span {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Estilo do corpo no modo escuro */
 body.dark-mode {
     background-color: #121212;
     color: white;
 }
+
+/* Estilo do container no modo escuro */
 body.dark-mode .container {
     background: #1e1e1e;
     color: white;
+    border-color: #ff5722; /* Borda laranja no modo escuro */
 }
+
+/* Estilo da barra lateral no modo escuro */
 body.dark-mode .sidebar {
     background: #1e1e1e;
+    color: white;
+    border-color: #ff5722;
 }
+
+/* Estilo do menu flutuante no modo escuro */
 body.dark-mode .floating-menu {
     background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
 }
-body.dark-mode #dark-mode-toggle {
+
+/* Estilo dos botões no modo escuro */
+body.dark-mode button {
     background: #ff5722;
+    color: white;
+    border-color: #ff5722;
 }
+
+/* Animação do botão de alternância de modo escuro */
+#dark-mode-toggle {
+    position: relative;
+    overflow: hidden;
+}
+#dark-mode-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.5s ease;
+}
+#dark-mode-toggle:active::before {
+    left: 100%;
+}
+
+/* Animação de fade para todos os elementos */
+body.dark-mode .fade-in {
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo geral para o input de número */
+input[type="number"] {
+    width: 100px; /* Largura do campo */
+    height: 40px; /* Altura do campo */
+    padding: 8px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    border: 2px solid #007BFF; /* Borda azul */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #fff; /* Fundo branco */
+    color: #333; /* Cor do texto */
+    outline: none; /* Remove o contorno ao focar */
+    appearance: none; /* Remove estilos padrão */
+    -moz-appearance: textfield; /* Remove as setas no Firefox */
+}
+
+/* Remove as setas padrão nos navegadores WebKit */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove as setas padrão */
+    margin: 0; /* Remove margens extras */
+}
+
+/* Estilo personalizado para o controle de aumento/diminuição */
+input[type="number"] {
+    position: relative;
+}
+
+input[type="number"]::after {
+    content: "▲"; /* Seta para cima */
+    position: absolute;
+    top: 8px;
+    right: 30px;
+    font-size: 12px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+input[type="number"]::before {
+    content: "▼"; /* Seta para baixo */
+    position: absolute;
+    bottom: 8px;
+    right: 30px;
+    font-size: 12px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+/* Efeito hover nas setas */
+input[type="number"]::after:hover,
+input[type="number"]::before:hover {
+    color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Ajuste para modo escuro */
+body.dark-mode input[type="number"] {
+    background-color: #1e1e1e; /* Fundo escuro */
+    color: #fff; /* Texto claro */
+    border-color: #ff5722; /* Borda laranja no modo escuro */
+}
+
+body.dark-mode input[type="number"]::after,
+body.dark-mode input[type="number"]::before {
+    color: #ff5722; /* Setas laranja no modo escuro */
+}
+

@@ -122,3 +122,27 @@ function clearError() {
     errorMessage.textContent = '';
     errorMessage.classList.remove('visible');
 }
+
+// Função para alternar modo escuro
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+
+    // Seleciona todos os elementos relevantes para aplicar o fade-in
+    const elementsToFade = document.querySelectorAll(
+        '.container, .sidebar, .floating-menu, button, h1, h2, h3, label, li, span'
+    );
+
+    // Adiciona a classe 'fade-in' temporariamente
+    elementsToFade.forEach(element => {
+        element.classList.add('fade-in');
+        setTimeout(() => {
+            element.classList.remove('fade-in');
+        }, 500); // Remove a classe após a duração da animação
+    });
+
+    // Altera o texto do botão
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    toggleButton.textContent = body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
+}
+
