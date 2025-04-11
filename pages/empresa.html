@@ -139,7 +139,7 @@
             height: auto;
         }
 
-        /* Estilização geral para o menu */
+       /* Estilização geral para o menu */
 #menu {
     display: flex;
     gap: 15px; /* Espaçamento entre os botões */
@@ -151,14 +151,23 @@
 
 /* Estilização dos botões */
 .botao {
-    position: relative;
     width: 100px; /* Largura fixa para os botões */
     height: 40px; /* Altura fixa para os botões */
-    background-color: #007bff; /* Cor de fundo azul */
+    background-color: #007bff; /* Cor de fundo azul padrão */
     border-radius: 5px; /* Borda arredondada */
-    overflow: hidden; /* Garante que o conteúdo não transborde */
+    display: flex; /* Centraliza o conteúdo interno */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
     cursor: pointer; /* Altera o cursor para indicar que é clicável */
     transition: background-color 0.3s ease; /* Transição suave para o fundo */
+}
+
+/* Estilização dos links dentro dos botões */
+.botao a {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: white; /* Cor do texto branca */
+    text-decoration: none; /* Remove sublinhado do link */
 }
 
 /* Efeito de hover no botão */
@@ -166,22 +175,14 @@
     background-color: #0056b3; /* Escurece o fundo ao passar o mouse */
 }
 
-/* Estilização dos links dentro dos botões */
-.botao a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: transparent; /* Texto invisível inicialmente */
-    text-decoration: none; /* Remove sublinhado do link */
-    transition: color 0.3s ease; /* Transição suave para a cor do texto */
+/* Estilo para o botão "selecionado" */
+.botao.selecionado {
+    background-color: #28a745; /* Verde para indicar selecionado */
+    cursor: default; /* Remove o cursor de clique para indicar que está ativo */
 }
 
-/* Exibe o texto do link ao passar o mouse */
-.botao:hover a {
-    color: white; /* Torna o texto visível ao passar o mouse */
+.botao.selecionado a {
+    color: white; /* Mantém o texto branco */
 }
     </style>
 </head>
