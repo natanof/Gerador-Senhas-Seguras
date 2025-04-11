@@ -193,6 +193,51 @@
             background-color: #2575fc;
             transition: width 3s linear;
         }
+
+        /* Estilização geral para o menu */
+#menu {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    padding: 10px;
+    background-color: #f4f4f4; /* Fundo claro para o menu */
+}
+
+/* Estilização dos botões */
+.botao {
+    position: relative;
+    width: 100px; /* Largura fixa para os botões */
+    height: 40px; /* Altura fixa para os botões */
+    background-color: #007bff; /* Cor de fundo azul */
+    border-radius: 5px; /* Borda arredondada */
+    overflow: hidden; /* Garante que o conteúdo não transborde */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+}
+
+/* Efeito de hover no botão */
+.botao:hover {
+    background-color: #0056b3; /* Escurece o fundo ao passar o mouse */
+}
+
+/* Estilização dos links dentro dos botões */
+.botao a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: transparent; /* Texto invisível inicialmente */
+    text-decoration: none; /* Remove sublinhado do link */
+    transition: color 0.3s ease; /* Transição suave para a cor do texto */
+}
+
+/* Exibe o texto do link ao passar o mouse */
+.botao:hover a {
+    color: white; /* Torna o texto visível ao passar o mouse */
+}
     </style>
 </head>
 
